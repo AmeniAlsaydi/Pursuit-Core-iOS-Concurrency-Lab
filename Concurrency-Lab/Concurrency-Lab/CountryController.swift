@@ -11,6 +11,7 @@ import UIKit
 class CountryController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var countries = [Country]() {
         didSet {
@@ -18,11 +19,18 @@ class CountryController: UIViewController {
         }
     }
     
+    var searchQuery = "" {
+        didSet {
+            countries = Country.getCountries().filter { $0.name.lowercased().contains(searchQuery.lowercased())}
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         loadData()
-        tableView.delegate = self 
+        tableView.delegate = self
+        searchBar.delegate = self
         
     }
     func loadData() {
@@ -64,5 +72,18 @@ extension CountryController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
         
+    }
+}
+
+extension CountryController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+          searchBar.resignFirstResponder()
+      }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+         guard !searchText.isEmpty else {
+                   loadData()
+                   return
+               }
+               searchQuery = searchText
     }
 }
