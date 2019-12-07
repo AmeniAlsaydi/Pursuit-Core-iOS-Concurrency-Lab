@@ -8,30 +8,38 @@
 
 import UIKit
 
+enum AppError : Error{
+    case badURL(String)
+    case networkClientError(Error)
+    case noResponse
+    case noData
+    case badStatusCode(Int)
+}
+
+
 struct ImageClient {
   
     
-    static func fetchimage(for urlString: String,
-                           completion: @escaping (Result<UIImage?, Error>) -> ()) {
-       
+    static func fetchimage(for urlString: String, completion: @escaping(Result<Data, AppError>)->()){
+        
         guard let url = URL(string: urlString) else {
-           print("bad url \(urlString)")
+            completion(.failure(.badURL(urlString)))
             return
         }
+        
         
         let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             if let error = error {
-                print("error: \(error)")
-               
+                completion(.failure(.networkClientError(error)))
+                return
             }
-          
+            
             if let data = data {
-                let image = UIImage(data: data)
-                completion(.success(image))
-                
+                dump(data)
+                completion(.success(data))
             }
         }
         dataTask.resume()
-}
+    }
 }

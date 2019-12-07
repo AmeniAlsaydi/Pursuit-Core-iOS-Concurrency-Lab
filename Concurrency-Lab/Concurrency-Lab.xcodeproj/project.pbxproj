@@ -17,6 +17,7 @@
 		B73F1DFA239ADCB500560391 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73F1DF9239ADCB500560391 /* CountryModel.swift */; };
 		B73F1DFC239BE58C00560391 /* ImageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73F1DFB239BE58C00560391 /* ImageClient.swift */; };
 		B73F1E00239BFDF000560391 /* CountryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73F1DFF239BFDF000560391 /* CountryDetailController.swift */; };
+		B73F1E02239C06B100560391 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73F1E01239C06B100560391 /* CountryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B73F1DF9239ADCB500560391 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		B73F1DFB239BE58C00560391 /* ImageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClient.swift; sourceTree = "<group>"; };
 		B73F1DFF239BFDF000560391 /* CountryDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailController.swift; sourceTree = "<group>"; };
+		B73F1E01239C06B100560391 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				B73F1DF9239ADCB500560391 /* CountryModel.swift */,
 				B73F1DF7239ADC4500560391 /* Country.json */,
 				B73F1DE5239ADB9400560391 /* CountryController.swift */,
+				B73F1E01239C06B100560391 /* CountryCell.swift */,
 				B73F1DFB239BE58C00560391 /* ImageClient.swift */,
 				B73F1DE1239ADB9400560391 /* AppDelegate.swift */,
 				B73F1DFF239BFDF000560391 /* CountryDetailController.swift */,
@@ -157,6 +160,7 @@
 				B73F1DFC239BE58C00560391 /* ImageClient.swift in Sources */,
 				B73F1DFA239ADCB500560391 /* CountryModel.swift in Sources */,
 				B73F1DE4239ADB9400560391 /* SceneDelegate.swift in Sources */,
+				B73F1E02239C06B100560391 /* CountryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

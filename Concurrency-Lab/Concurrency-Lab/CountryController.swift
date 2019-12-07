@@ -22,6 +22,7 @@ class CountryController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         loadData()
+        tableView.delegate = self 
         
     }
     func loadData() {
@@ -45,34 +46,23 @@ extension CountryController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as? CountryCell else {
+            fatalError("issue with country cell")
+        }
         
         let country = countries[indexPath.row]
         
-        
-        cell.textLabel?.text = country.name
-        cell.detailTextLabel?.text = country.population.description
-        print(country.flag)
-        
-        ImageClient.fetchimage(for: country.flag) { [unowned self] (result) in
-        switch result {
-        case.success(let image):
-            DispatchQueue.main.async {
-                cell.imageView?.image = image
-            }
-            
-            
-        case .failure(let error):
-                print("configureCell image error - \(error)")
-                           
-            }
-        }
+        cell.configureCell(for: country)
         
         return cell
         
         
     }
-    
-    
 }
 
+extension CountryController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+        
+    }
+}

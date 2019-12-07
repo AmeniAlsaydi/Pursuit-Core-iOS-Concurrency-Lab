@@ -14,6 +14,8 @@ struct Country: Decodable {
     let population: Int
     let currencies: [CurrencyInfo] // use .first to get the first item in this array.
     let flag: String // use urlSession
+    let alpha2Code: String
+    let capital: String
     
 }
 struct CurrencyInfo: Decodable {

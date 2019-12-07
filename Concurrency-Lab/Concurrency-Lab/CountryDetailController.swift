@@ -28,21 +28,19 @@ class CountryDetailController: UIViewController {
         guard let theCountry = country else {
             fatalError("no image") }
         nameLabel.text = theCountry.name
-          ImageClient.fetchimage(for: theCountry.flag) { [unowned self] (result) in
-          switch result {
-          case.success(let image):
-              DispatchQueue.main.async {
-                self.imageView.image = image
-              }
-              
-              
-          case .failure(let error):
-                  print("configureCell image error - \(error)")
-                             
-              }
-          
-            
+        
+        ImageClient.fetchimage(for: "https://www.countryflags.io/\(theCountry.alpha2Code)/flat/64.png") { (result) in
+            switch result {
+            case .failure(let appError):
+                print("appError: \(appError)")
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self.imageView.image = UIImage(data: image)
+                }
+            }
         }
+         
+    
     }
 
 }
