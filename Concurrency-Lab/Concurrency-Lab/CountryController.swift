@@ -27,6 +27,14 @@ class CountryController: UIViewController {
     func loadData() {
         countries = Country.getCountries()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailVC = segue.destination as? CountryDetailController, let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("couldnt get detailVC or indexPath")
+        }
+        
+        detailVC.country = countries[indexPath.row]
+    }
 
 
 }
@@ -41,9 +49,28 @@ extension CountryController: UITableViewDataSource {
         
         let country = countries[indexPath.row]
         
+        
         cell.textLabel?.text = country.name
         cell.detailTextLabel?.text = country.population.description
+        print(country.flag)
+        
+        ImageClient.fetchimage(for: country.flag) { [unowned self] (result) in
+        switch result {
+        case.success(let image):
+            DispatchQueue.main.async {
+                cell.imageView?.image = image
+            }
+            
+            
+        case .failure(let error):
+                print("configureCell image error - \(error)")
+                           
+            }
+        }
+        
         return cell
+        
+        
     }
     
     
