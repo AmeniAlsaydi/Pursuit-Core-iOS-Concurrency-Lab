@@ -12,6 +12,8 @@ class CountryDetailController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var capitalLabel: UILabel!
+    @IBOutlet var populationLabel: UILabel!
     
     var country: Country?
     
@@ -28,6 +30,9 @@ class CountryDetailController: UIViewController {
         guard let theCountry = country else {
             fatalError("no image") }
         nameLabel.text = theCountry.name
+        capitalLabel.text = "Capital: \(theCountry.capital)"
+        
+        populationLabel.text = "Population: \(theCountry.population)"
         
         ImageClient.fetchimage(for: "https://www.countryflags.io/\(theCountry.alpha2Code)/flat/64.png") { (result) in
             switch result {
