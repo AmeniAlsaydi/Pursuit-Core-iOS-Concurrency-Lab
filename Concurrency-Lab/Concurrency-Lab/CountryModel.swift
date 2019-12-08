@@ -19,8 +19,9 @@ struct Country: Decodable {
     
 }
 struct CurrencyInfo: Decodable {
-    let name: String
+    let code: String // this is the currency code to be compared to in the exchange API
     let symbol: String
+    let name: String
 }
 
 extension Country {

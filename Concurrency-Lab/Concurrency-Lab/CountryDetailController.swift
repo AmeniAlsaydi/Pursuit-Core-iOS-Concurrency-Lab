@@ -14,8 +14,11 @@ class CountryDetailController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var capitalLabel: UILabel!
     @IBOutlet var populationLabel: UILabel!
+    @IBOutlet weak var exchangeLabel: UILabel!
     
     var country: Country?
+    var exchange: ExchangeRate?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +30,17 @@ class CountryDetailController: UIViewController {
     func updateUI() {
         
          
-        guard let theCountry = country else {
+        guard let theCountry = country, let theExchange = exchange else {
             fatalError("no image") }
         nameLabel.text = theCountry.name
         capitalLabel.text = "Capital: \(theCountry.capital)"
-        
         populationLabel.text = "Population: \(theCountry.population)"
+        
+        let exchangeRate = theExchange.rates[theCountry.currencies.first?.code ?? " "] ?? 0
+        let formatedRate = String(format: "%.0f", exchangeRate)
+        let currencyName = theCountry.currencies.first?.name ?? " "
+        
+        exchangeLabel.text = "1 US Dollar = \(formatedRate) \(currencyName)"
         
         ImageClient.fetchimage(for: "https://www.countryflags.io/\(theCountry.alpha2Code)/flat/64.png") { (result) in
             switch result {

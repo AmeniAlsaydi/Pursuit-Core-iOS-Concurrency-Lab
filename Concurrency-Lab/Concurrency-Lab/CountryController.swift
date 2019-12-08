@@ -13,6 +13,8 @@ class CountryController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var exchanges = ExchangeRate.getRates()
+    
     var countries = [Country]() {
         didSet {
             tableView.reloadData()
@@ -43,6 +45,7 @@ class CountryController: UIViewController {
         }
         
         detailVC.country = countries[indexPath.row]
+        detailVC.exchange = exchanges
     }
 
 

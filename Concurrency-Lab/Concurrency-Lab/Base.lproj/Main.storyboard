@@ -115,44 +115,72 @@
                                 <rect key="frame" x="20" y="20" width="374" height="210"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSq-YX-1dI">
-                                <rect key="frame" x="20" y="270" width="374" height="20.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <rect key="frame" x="20" y="270" width="374" height="26.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capital" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fy-dD-pOH">
-                                <rect key="frame" x="20" y="300.5" width="374" height="18"/>
+                                <rect key="frame" x="20" y="367.5" width="374" height="18"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Population" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fq-Lk-cDs">
-                                <rect key="frame" x="20" y="328.5" width="374" height="18"/>
+                                <rect key="frame" x="20" y="395.5" width="374" height="18"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exchange Rates " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFA-bL-BeM">
+                                <rect key="frame" x="20" y="453.5" width="374" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exchange Rates " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wn-GT-bPX">
+                                <rect key="frame" x="20" y="484.5" width="374" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIh-gN-esz">
+                                <rect key="frame" x="20" y="336.5" width="374" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="5fq-Lk-cDs" firstAttribute="leading" secondItem="EhU-d1-dyI" secondAttribute="leading" constant="20" id="11d-uN-5wV"/>
                             <constraint firstItem="EhU-d1-dyI" firstAttribute="trailing" secondItem="pSq-YX-1dI" secondAttribute="trailing" constant="20" id="75h-oy-5Fj"/>
+                            <constraint firstItem="EhU-d1-dyI" firstAttribute="trailing" secondItem="aFA-bL-BeM" secondAttribute="trailing" constant="20" id="85q-I2-phf"/>
+                            <constraint firstItem="aFA-bL-BeM" firstAttribute="top" secondItem="5fq-Lk-cDs" secondAttribute="bottom" constant="40" id="8T6-kF-iUT"/>
                             <constraint firstItem="vFl-aA-7mH" firstAttribute="height" secondItem="8SD-71-vkr" secondAttribute="height" multiplier="0.249406" id="AJS-NZ-iXU"/>
+                            <constraint firstItem="2fy-dD-pOH" firstAttribute="top" secondItem="cIh-gN-esz" secondAttribute="bottom" constant="10" id="AJd-hY-0Bu"/>
                             <constraint firstItem="EhU-d1-dyI" firstAttribute="trailing" secondItem="vFl-aA-7mH" secondAttribute="trailing" constant="20" id="CTY-Dz-G0l"/>
-                            <constraint firstItem="5fq-Lk-cDs" firstAttribute="leading" secondItem="EhU-d1-dyI" secondAttribute="leading" constant="20" id="D6i-3q-9zD"/>
-                            <constraint firstItem="5fq-Lk-cDs" firstAttribute="top" secondItem="2fy-dD-pOH" secondAttribute="bottom" constant="10" id="Flc-UE-sSF"/>
+                            <constraint firstItem="aFA-bL-BeM" firstAttribute="leading" secondItem="EhU-d1-dyI" secondAttribute="leading" constant="20" id="FHU-y0-et5"/>
                             <constraint firstItem="vFl-aA-7mH" firstAttribute="top" secondItem="EhU-d1-dyI" secondAttribute="top" constant="20" id="IDL-xC-vhJ"/>
-                            <constraint firstItem="EhU-d1-dyI" firstAttribute="trailing" secondItem="2fy-dD-pOH" secondAttribute="trailing" constant="20" id="IEf-mt-Yje"/>
+                            <constraint firstItem="EhU-d1-dyI" firstAttribute="trailing" secondItem="5fq-Lk-cDs" secondAttribute="trailing" constant="20" id="Iez-RL-2JZ"/>
+                            <constraint firstItem="EhU-d1-dyI" firstAttribute="trailing" secondItem="2fy-dD-pOH" secondAttribute="trailing" constant="20" id="NkD-Pv-cqD"/>
+                            <constraint firstItem="EhU-d1-dyI" firstAttribute="trailing" secondItem="cIh-gN-esz" secondAttribute="trailing" constant="20" id="RRw-bR-ZtS"/>
+                            <constraint firstItem="cIh-gN-esz" firstAttribute="leading" secondItem="EhU-d1-dyI" secondAttribute="leading" constant="20" id="SRZ-q6-wli"/>
                             <constraint firstItem="pSq-YX-1dI" firstAttribute="top" secondItem="vFl-aA-7mH" secondAttribute="bottom" constant="40" id="UfH-Di-Zv2"/>
-                            <constraint firstItem="EhU-d1-dyI" firstAttribute="trailing" secondItem="5fq-Lk-cDs" secondAttribute="trailing" constant="20" id="Xcd-X2-dlb"/>
+                            <constraint firstItem="5fq-Lk-cDs" firstAttribute="top" secondItem="2fy-dD-pOH" secondAttribute="bottom" constant="10" id="XaV-HR-NOH"/>
                             <constraint firstItem="vFl-aA-7mH" firstAttribute="leading" secondItem="EhU-d1-dyI" secondAttribute="leading" constant="20" id="axw-Kc-Fku"/>
-                            <constraint firstItem="2fy-dD-pOH" firstAttribute="top" secondItem="pSq-YX-1dI" secondAttribute="bottom" constant="10" id="dHV-tb-yyZ"/>
-                            <constraint firstItem="2fy-dD-pOH" firstAttribute="leading" secondItem="EhU-d1-dyI" secondAttribute="leading" constant="20" id="dYM-35-ApS"/>
+                            <constraint firstItem="cIh-gN-esz" firstAttribute="top" secondItem="pSq-YX-1dI" secondAttribute="bottom" constant="40" id="dGd-z1-jlz"/>
                             <constraint firstItem="pSq-YX-1dI" firstAttribute="leading" secondItem="EhU-d1-dyI" secondAttribute="leading" constant="20" id="di2-wl-6Dx"/>
+                            <constraint firstItem="2fy-dD-pOH" firstAttribute="leading" secondItem="EhU-d1-dyI" secondAttribute="leading" constant="20" id="dxC-ie-fYy"/>
+                            <constraint firstItem="2Wn-GT-bPX" firstAttribute="leading" secondItem="EhU-d1-dyI" secondAttribute="leading" constant="20" id="mN7-SX-SF1"/>
+                            <constraint firstItem="2Wn-GT-bPX" firstAttribute="top" secondItem="aFA-bL-BeM" secondAttribute="bottom" constant="10" id="pjx-kN-bC5"/>
+                            <constraint firstItem="EhU-d1-dyI" firstAttribute="trailing" secondItem="2Wn-GT-bPX" secondAttribute="trailing" constant="20" id="q3o-gr-9tG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EhU-d1-dyI"/>
                     </view>
                     <connections>
                         <outlet property="capitalLabel" destination="2fy-dD-pOH" id="9So-Wq-9wb"/>
+                        <outlet property="exchangeLabel" destination="2Wn-GT-bPX" id="MG9-bV-mjn"/>
                         <outlet property="imageView" destination="vFl-aA-7mH" id="1CV-yU-CSO"/>
                         <outlet property="nameLabel" destination="pSq-YX-1dI" id="amb-Op-59O"/>
                         <outlet property="populationLabel" destination="5fq-Lk-cDs" id="HY0-IH-fY7"/>
